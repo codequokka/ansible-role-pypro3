@@ -3,3 +3,6 @@
 
 # Molecule
 __pycache__/
+
+# Vscode
+.vscode/
