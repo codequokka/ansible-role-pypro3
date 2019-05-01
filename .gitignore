@@ -1,2 +1,5 @@
 # Python
 .venv/
+
+# Molecule
+__pycache__/
