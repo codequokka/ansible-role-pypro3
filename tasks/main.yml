@@ -1,2 +1,8 @@
 ---
 # tasks file for pypro3
+- name: Make a link for ansible_python_interpreter
+  become: yes
+  file:
+    src: /usr/bin/python3
+    dest: /usr/bin/python
+    state: link
