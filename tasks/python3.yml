@@ -1,6 +1,5 @@
 ---
 - name: Install apt packages for python3
-  become: yes
   apt:
     name:
       - build-essential
@@ -16,20 +15,17 @@
       - libssl-dev
 
 - name: Download python3.6 tar ball
-  become: yes
   get_url:
     url: https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tgz
     dest: /opt/Python-3.6.4.tgz
 
 - name: Unarchive python3.6 tar ball
-  become: yes
   unarchive:
     src: /opt/Python-3.6.4.tgz
     dest: /opt
     remote_src: yes
 
 - name: Install python3.6
-  become: yes
   command: '{{ item }}'
   args:
     chdir: /opt/Python-3.6.4
@@ -40,7 +36,6 @@
     - make install
 
 - name: Make links for python3.6, pip to /usr/local/bin
-  become: yes
   file:
     src: '{{ item.src }}'
     dest: '{{ item.dest }}'
