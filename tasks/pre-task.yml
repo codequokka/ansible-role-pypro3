@@ -1,0 +1,12 @@
+---
+- name: Make a link for ansible_python_interpreter
+  file:
+    src: /usr/bin/python3.5
+    dest: /usr/bin/python
+    state: link
+
+- name: Update and upgrade all packages to the latest version
+  apt:
+    update_cache: yes
+    upgrade: yes
+    cache_valid_time: 3600
