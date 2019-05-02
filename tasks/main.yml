@@ -3,6 +3,35 @@
 - name: Make a link for ansible_python_interpreter
   become: yes
   file:
-    src: /usr/bin/python3
+    src: /usr/bin/python3.5
     dest: /usr/bin/python
     state: link
+
+- name: Update and upgrade all packages to the latest version
+  become: yes
+  apt:
+    update_cache: yes
+    upgrade: yes
+    cache_valid_time: 3600
+
+- name: Install apt packages
+  become: yes
+  apt:
+    name:
+      - language-pack-ja
+
+- name: Check whether /etc/default/locale contains 'LANG=ja_JP.UTF-8'
+  command: grep -Fxq 'LANG=ja_JP.UTF-8' /etc/default/locale
+  register: is_default_locale_ja
+  ignore_errors: yes
+  changed_when: no
+
+- name: Set system default locale to ja_JP.UTF-8
+  become: yes
+  command: update-locale LANG=ja_JP.UTF-8
+  when: is_default_locale_ja.rc != 0
+
+- name: Set user locale to ja_JP.UTF-8
+  lineinfile:
+    path: /home/vagrant/.bashrc
+    line: 'export LANGUAGE=ja_JP:ja'
