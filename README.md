@@ -6,7 +6,7 @@ Provisioning devlop environment for pypro3 book([Pythonプロフェッショナ�
 Requirements
 ------------
 
-None.
+- Platform: Ubuntu-16.04
 
 Role Variables
 --------------
@@ -21,12 +21,11 @@ None.
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables
-passed in as parameters) is always nice for users too:
-
-    - hosts: servers
+    - name: provisioning developemnt environment for pypro3 book
+      hosts: all
+      become: yes
       roles:
-         - { role: pypro3, x: 42 }
+        - codequokka.ansible_role_pypro3
 
 License
 -------
