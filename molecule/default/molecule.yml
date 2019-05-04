@@ -23,5 +23,7 @@ verifier:
   directory: ../resources/tests/
   options:
     v: 1
+  env:
+    PYTHONWARNINGS: "ignore:.*U.*mode is deprecated:DeprecationWarning"
   lint:
     name: flake8
