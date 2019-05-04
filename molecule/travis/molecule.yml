@@ -21,5 +21,7 @@ provisioner:
 verifier:
   name: testinfra
   directory: ../resources/tests/
+  options:
+    v: 1
   lint:
     name: flake8
