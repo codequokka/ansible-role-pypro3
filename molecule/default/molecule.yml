@@ -16,9 +16,16 @@ provisioner:
     host_vars:
       instance:
         ansible_python_interpreter: /usr/bin/python3
+  playbooks:
+    converge: ../resources/playbooks/playbook.yml
   lint:
     name: ansible-lint
 verifier:
   name: testinfra
+  directory: ../resources/tests/
+  options:
+    v: 1
+  env:
+    PYTHONWARNINGS: "ignore:.*U.*mode is deprecated:DeprecationWarning"
   lint:
     name: flake8
