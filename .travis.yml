@@ -9,4 +9,4 @@ install:
   - pip install molecule
   - pip install docker
 script:
-  - molecule test -s travis
+  - travis_wait molecule test -s travis
