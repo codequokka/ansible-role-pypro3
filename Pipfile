@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 molecule = {extras = ["vagrant"],version = "*"}
+docker-py = "*"
 
 [packages]
 

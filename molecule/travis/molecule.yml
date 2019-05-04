@@ -1,0 +1,24 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+  provider:
+    name: virtualbox
+lint:
+  name: yamllint
+platforms:
+  - name: instance
+    image: ubuntu:16.04
+provisioner:
+  name: ansible
+  # inventory:
+  #   host_vars:
+  #     instance:
+  #       ansible_python_interpreter: /usr/bin/python
+  lint:
+    name: ansible-lint
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

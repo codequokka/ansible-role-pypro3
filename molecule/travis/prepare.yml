@@ -1,0 +1,8 @@
+---
+- name: Prepare
+  hosts: all
+  become: yes
+  tasks:
+    - name: Add vagrant user
+      user:
+        name: vagrant
