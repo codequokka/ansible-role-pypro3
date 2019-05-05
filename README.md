@@ -29,6 +29,14 @@ Example Playbook
       roles:
         - codequokka.ansible_role_pypro3
 
+Note
+----
+If you want to provision develop environment as stated in book,
+you should use this repo:
+
+- [codequokka/pypro3-dev-env](https://github.com/codequokka/pypro3-dev-env)
+
+
 License
 -------
 
