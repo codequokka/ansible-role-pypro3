@@ -3,4 +3,4 @@
 - [x] Examine how to suppress errors from a checking task initialy failed
 - [x] Refactor role
 - [x] Introduce CI
-- [ ] Rename wrong test name(test_jang-ja.py)
+- [x] Rename wrong test name(test_jang-ja.py)
