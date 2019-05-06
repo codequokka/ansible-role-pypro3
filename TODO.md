@@ -4,3 +4,4 @@
 - [x] Refactor role
 - [x] Introduce CI
 - [x] Rename wrong test name(test_jang-ja.py)
+- [ ] Change role name
