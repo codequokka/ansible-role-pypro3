@@ -30,7 +30,7 @@ def test_apt_packages_are_installed(host, package):
 def test_python3_is_installed(host):
     c = host.run('/opt/python3.6.4/bin/python3.6 -V')
 
-    assert c.stdout == 'Python 3.6.4'
+    assert c.stdout == 'Python 3.6.4\n'
 
 
 @pytest.mark.parametrize('src, dest', [
