@@ -7,8 +7,9 @@ verify_ssl = true
 molecule = {extras = ["vagrant"],version = "*"}
 docker-py = "*"
 testinfra = "~=3.0.4"
+ansible = "*"
 
 [packages]
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"

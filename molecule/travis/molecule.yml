@@ -5,8 +5,8 @@ driver:
   name: docker
   provider:
     name: virtualbox
-lint:
-  name: yamllint
+lint: |
+  yamllint .
 platforms:
   - name: instance
     image: ubuntu:16.04
@@ -14,8 +14,8 @@ provisioner:
   name: ansible
   playbooks:
     converge: ../resources/playbooks/playbook.yml
-  lint:
-    name: ansible-lint
+  lint: |
+    ansible-lint
 verifier:
   name: testinfra
   directory: ../resources/tests/
@@ -23,5 +23,5 @@ verifier:
     v: 1
   env:
     PYTHONWARNINGS: "ignore:.*U.*mode is deprecated:DeprecationWarning"
-  lint:
-    name: flake8
+  lint: |
+    flake8
